@@ -1,0 +1,47 @@
+<apex:page Controller="ModeUserSystemControl">
+     <apex:pageBlock >
+         <a href="apex/UMSM_ControllerCustomWithoutSharing">UMSM_ControllerCustomWithoutSharing: custom controller without sharing</a>
+    </apex:pageBlock>
+    <apex:pageBlock >
+         <a href="apex/UMSM_ControllerCustomWithSharing">UMSM_ControllerCustomWithSharing : custom controller with sharing</a>
+    </apex:pageBlock>
+    <apex:pageBlock >
+         <a href="apex/UMSM_ControllerExtensionWithoutSharing">UMSM_ControllerExtensionWithoutSharing : standard controller + Extension without sharing</a>
+    </apex:pageBlock>
+    <apex:pageBlock >
+         <a href="apex/UMSM_ControllerExtensionWithSharing">UMSM_ControllerExtensionWithSharing : standard controller + Extension with sharing</a>
+    </apex:pageBlock>
+    --------------------------------------------------------------------------------------------------------------------
+    --------------------------------------------------------------------------------------------------------------------
+    <apex:form >
+     <apex:pageBlock >
+          <apex:commandButton action="{!createData}" value="Create Data"/>
+          <apex:commandButton action="{!readData}" value="Read Data"/>
+     </apex:pageBlock>
+     <apex:pageblock id="Reads" title="Reads">
+          <apex:pageblockTable value="{!reads}" var="r">
+          <apex:column value="{!r.Name}"/>
+          <apex:column value="{!r.Edit__c}"/>
+          <apex:column value="{!r.Read__c}"/>
+          <apex:column value="{!r.Noright__c}"/>
+          </apex:pageblockTable>         
+     </apex:pageblock>  
+     <apex:pageblock id="Updates" title="Updates">
+          <apex:pageblockTable value="{!Updates}" var="r">
+          <apex:column value="{!r.Name}"/>
+          <apex:column value="{!r.Edit__c}"/>
+          <apex:column value="{!r.Read__c}"/>
+          </apex:pageblockTable>         
+     </apex:pageblock>  
+     <apex:pageblock id="Norights" title="Norights">
+          <apex:pageblockTable value="{!norights}" var="r">
+          <apex:column value="{!r.Name}"/>
+          </apex:pageblockTable>         
+     </apex:pageblock>  
+     <apex:pageblock id="fakenorights" title="fakenorights">
+          <apex:pageblockTable value="{!fakenorights}" var="r">
+          <apex:column value="{!r.Name}"/>
+          </apex:pageblockTable>         
+     </apex:pageblock>  
+    </apex:form>
+</apex:page>

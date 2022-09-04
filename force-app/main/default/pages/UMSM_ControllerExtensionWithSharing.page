@@ -1,0 +1,38 @@
+<apex:page standardController="Read__c" extensions="ControllerExtensionWithSharing">
+     <apex:pageBlock >
+         Extension Controller with Sharing<br/>
+         <apex:form >
+           
+             
+         <apex:commandButton action="{!readTest}" value="readTest"/>
+         <apex:commandButton action="{!updateTest}" value="updateTest"/>
+         <apex:commandButton action="{!deleteTest}" value="deleteTest"/>
+         <apex:commandButton action="{!createTest}" value="createTest"/>
+         <apex:pageblock id="Reads" title="Reads">
+            <apex:pageblockTable value="{!reads}" var="r">
+            <apex:column value="{!r.Name}"/>
+            <apex:column value="{!r.Edit__c}"/>
+            <apex:column value="{!r.Read__c}"/>
+            <apex:column value="{!r.Noright__c}"/>
+            </apex:pageblockTable>         
+       </apex:pageblock>  
+       <apex:pageblock id="Updates" title="Updates">
+            <apex:pageblockTable value="{!Updates}" var="r">
+            <apex:column value="{!r.Name}"/>
+            <apex:column value="{!r.Edit__c}"/>
+            <apex:column value="{!r.Read__c}"/>
+            </apex:pageblockTable>         
+       </apex:pageblock>  
+       <apex:pageblock id="Norights" title="Norights">
+            <apex:pageblockTable value="{!norights}" var="r">
+            <apex:column value="{!r.Name}"/>
+            </apex:pageblockTable>         
+       </apex:pageblock>  
+       <apex:pageblock id="fakenorights" title="fakenorights">
+            <apex:pageblockTable value="{!fakenorights}" var="r">
+            <apex:column value="{!r.Name}"/>
+            </apex:pageblockTable>         
+       </apex:pageblock>  
+         </apex:form>
+    </apex:pageBlock>
+</apex:page>
